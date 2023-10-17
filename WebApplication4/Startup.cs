@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication4.Services.Implementations;
 
 namespace WebApplication4
 {
@@ -27,6 +28,8 @@ namespace WebApplication4
         {
 
             services.AddControllers();
+            //Injecao de dependencia
+            services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
