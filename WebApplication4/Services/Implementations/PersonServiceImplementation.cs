@@ -27,8 +27,9 @@ namespace WebApplication4.Services.Implementations
                 Id = IncrementAndGet(),
                 FirstName = "Person Name",
                 LastName = "Person LastName",
-                Address = "SomeAdress",
-                Gender = "Male"
+                Description = "Descricao Aqui"
+                //Address = "SomeAdress",
+                //Gender = "Male"
             };
         }
 
@@ -57,8 +58,9 @@ namespace WebApplication4.Services.Implementations
                 Id = IncrementAndGet(),
                 FirstName = "Person Name" + i,
                 LastName = "Person LastName" + i,
-                Address = "SomeAdress" + i,
-                Gender = "Male" + i
+                Description = "DescricaoAqui" + i
+                //Address = "SomeAdress" + i,
+                //Gender = "Male" + i
             };
         }
 

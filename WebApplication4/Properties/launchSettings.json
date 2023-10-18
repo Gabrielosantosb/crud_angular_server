@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebApplication4": {
+    "API-https": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
