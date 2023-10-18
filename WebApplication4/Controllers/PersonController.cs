@@ -58,7 +58,7 @@ namespace WebApplication4.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
             var person = _personService.FindById(id);
