@@ -50,12 +50,12 @@ namespace WebApplication4.Controllers
 
         }
 
-        [HttpPut]
-        public IActionResult Put([FromBody] Person person)
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Person person)
         {
             if (person == null) return BadRequest();
+            if (id != person.Id) return BadRequest("O ID do objeto não corresponde ao ID");
             return Ok(_personService.Update(person));
-
         }
 
         [HttpDelete("{id}")]
@@ -66,6 +66,18 @@ namespace WebApplication4.Controllers
             return Ok(_personService.Delete(id));
 
 
+        }
+
+        [HttpDelete("all")]
+        public IActionResult DeleteAll()
+        {
+            var deletedPersons = _personService.DeleteAll();
+            if (deletedPersons.Count == 0)
+            {
+                return NotFound("Nenhum registro de pessoa para excluir.");
+            }
+
+            return Ok("Todos usuários deletados");
         }
     }
 }

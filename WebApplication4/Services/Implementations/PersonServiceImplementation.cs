@@ -28,6 +28,21 @@ namespace WebApplication4.Services.Implementations
             return _context.Persons.SingleOrDefault(p => p.Id == id);
         }
 
+        //public Person Create(Person person)
+        //{
+
+        //    try
+        //    {
+        //        _context.Add(person);
+        //        _context.SaveChanges();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return person;
+        //}
+
         public Person Create(Person person)
         {
 
@@ -83,6 +98,15 @@ namespace WebApplication4.Services.Implementations
             return null;
         }
 
+        public List<Person> DeleteAll()
+        {
+            var allPersons = _context.Persons.ToList();
+            _context.Persons.RemoveRange(allPersons);
+            _context.SaveChanges();
+            return allPersons;
+        }
+
+    
         private bool Exists(long id)
         {
             return _context.Persons.Any(p => p.Id == id);
