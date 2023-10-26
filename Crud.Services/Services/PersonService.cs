@@ -1,18 +1,16 @@
-﻿using System;
+﻿using Crud.ORM.Entity;
+using Crud.ORM.Model.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
-using WebApplication4.Model;
-using WebApplication4.Model.Context;
 
-namespace WebApplication4.Services.Implementations
+namespace Crud.Services.Services
 {
-    public class PersonServiceImplementation : IPersonService
+    public class PersonService : IPersonService
     {
         private MySQLContext _context;
 
-        public PersonServiceImplementation(MySQLContext context)
+        public PersonService(MySQLContext context)
         {
 
             _context = context;
@@ -28,20 +26,6 @@ namespace WebApplication4.Services.Implementations
             return _context.Persons.SingleOrDefault(p => p.Id == id);
         }
 
-        //public Person Create(Person person)
-        //{
-
-        //    try
-        //    {
-        //        _context.Add(person);
-        //        _context.SaveChanges();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //    return person;
-        //}
 
         public Person Create(Person person)
         {
@@ -106,7 +90,7 @@ namespace WebApplication4.Services.Implementations
             return allPersons;
         }
 
-    
+
         private bool Exists(long id)
         {
             return _context.Persons.Any(p => p.Id == id);

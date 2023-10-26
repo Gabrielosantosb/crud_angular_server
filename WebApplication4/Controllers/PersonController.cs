@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Crud.ORM.Entity;
+using Crud.Services.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebApplication4.Model;
-using WebApplication4.Services.Implementations;
 
-namespace WebApplication4.Controllers
+namespace Crud.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

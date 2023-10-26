@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Crud.ORM.Entity;
+using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication4.Model.Context
+namespace Crud.ORM.Model.Context
 {
     public class MySQLContext : DbContext
     {
@@ -9,7 +10,7 @@ namespace WebApplication4.Model.Context
 
         }
 
-        public MySQLContext(DbContextOptions<MySQLContext> options) : base(options) 
+        public MySQLContext(DbContextOptions<MySQLContext> options) : base(options)
         {
 
         }

@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication4", "WebApplication4\WebApplication4.csproj", "{8DE6C852-5DBA-419B-94AB-C33C01E08AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.API", "WebApplication4\Crud.API.csproj", "{8DE6C852-5DBA-419B-94AB-C33C01E08AC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{10C9B593-668A-4A31-AB04-D2C00E30DB7B} = {10C9B593-668A-4A31-AB04-D2C00E30DB7B}
+		{118EC382-8B99-423E-AF7E-73A0327ACCEA} = {118EC382-8B99-423E-AF7E-73A0327ACCEA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.ORM", "Crud.ORM\Crud.ORM.csproj", "{118EC382-8B99-423E-AF7E-73A0327ACCEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Services", "Crud.Services\Crud.Services.csproj", "{10C9B593-668A-4A31-AB04-D2C00E30DB7B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{118EC382-8B99-423E-AF7E-73A0327ACCEA} = {118EC382-8B99-423E-AF7E-73A0327ACCEA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,14 @@ Global
 		{8DE6C852-5DBA-419B-94AB-C33C01E08AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DE6C852-5DBA-419B-94AB-C33C01E08AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DE6C852-5DBA-419B-94AB-C33C01E08AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{118EC382-8B99-423E-AF7E-73A0327ACCEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{118EC382-8B99-423E-AF7E-73A0327ACCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{118EC382-8B99-423E-AF7E-73A0327ACCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{118EC382-8B99-423E-AF7E-73A0327ACCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C9B593-668A-4A31-AB04-D2C00E30DB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C9B593-668A-4A31-AB04-D2C00E30DB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C9B593-668A-4A31-AB04-D2C00E30DB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C9B593-668A-4A31-AB04-D2C00E30DB7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

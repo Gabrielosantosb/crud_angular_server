@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using WebApplication4.Model;
+﻿using Crud.ORM.Entity;
+using System.Collections.Generic;
 
-namespace WebApplication4.Services.Implementations
+namespace Crud.Services.Services
 {
     public interface IPersonService
     {

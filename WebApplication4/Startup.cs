@@ -1,21 +1,13 @@
+using Crud.ORM.Model.Context;
+using Crud.Services.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebApplication4.Model.Context;
-using WebApplication4.Services.Implementations;
 
-namespace WebApplication4
+namespace Crud.API
 {
     public class Startup
     {
@@ -44,7 +36,7 @@ namespace WebApplication4
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
             //Injecao de dependencia
-            services.AddScoped<IPersonService, PersonServiceImplementation>();
+            services.AddScoped<IPersonService, PersonService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

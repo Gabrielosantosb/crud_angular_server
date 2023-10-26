@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApplication4.Model
+namespace Crud.ORM.Entity
 {
     [Table("person")]
     public class Person
