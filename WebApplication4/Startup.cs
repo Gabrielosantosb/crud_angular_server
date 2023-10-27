@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Crud.API
 {
@@ -34,7 +35,11 @@ namespace Crud.API
             services.AddControllers();
 
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
-            services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
+            services.AddDbContext<MySQLContext>(options =>
+            {
+                options.UseMySql(connection, new MariaDbServerVersion(new Version(8, 0, 26))); // Substitua a versão pelo seu servidor MySQL
+            });
+            //services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
             //Injecao de dependencia
             services.AddScoped<IPersonService, PersonService>();
         }
